@@ -52,13 +52,13 @@ Welcome to the Python Quiz Challenge! This is a web-based multiple-choice quiz a
 This application is built using modern web technologies and follows a separation of concerns:
 
 *   **Frontend**:
-    *   `index.html`: The main HTML structure of the application.
-    *   `style.css`: Contains all the styling rules for the visual appearance.
-    *   `script.js`: Handles all client-side logic, including fetching questions, displaying them, user interactions, answer validation (client-side feedback), and navigation.
+    *   `public/index.html`: The main HTML structure of the application.
+    *   `public/style.css`: Contains all the styling rules for the visual appearance.
+    *   `public/script.js`: Handles all client-side logic, including fetching questions, displaying them, user interactions, answer validation (client-side feedback), and navigation.
 *   **Backend (API)**:
-    *   `api/index.py`: A Python Flask application that serves as the backend.
+    *   `index.py`: A Python Flask application that serves as the backend.
         *   It provides an API endpoint (`/api/questions`) to fetch the quiz questions.
-        *   It can also serve the static files (HTML, CSS, JS) for local development.
+        *   It serves the static files (HTML, CSS, JS) from the `public` directory.
 *   **Data**:
     *   `questions.json`: A JSON file storing all the quiz questions, their options, and the correct answers. To add more questions, you can edit this file following the existing format.
 *   **Deployment Configuration**:
@@ -69,14 +69,15 @@ This application is built using modern web technologies and follows a separation
 
 ```
 e:/projects/python_games/quiz/
-├── api/
-│   └── index.py         # Python Flask API
-├── index.html           # Main HTML page
+├── public/
+│   ├── index.html       # Main HTML page
+│   ├── script.js        # Client-side JavaScript
+│   └── style.css        # CSS styles
+├── index.py             # Python Flask API
 ├── questions.json       # Quiz questions data
 ├── requirements.txt     # Python dependencies
-├── script.js            # Client-side JavaScript
-├── style.css            # CSS styles
 ├── USER_GUIDE.md        # This user guide
+├── DEVELOPER_GUIDE.md   # Guide for developers
 └── vercel.json          # Vercel deployment configuration
 ```
 
@@ -110,12 +111,12 @@ To run the quiz application on your local machine:
     *   Install the required Python packages: `pip install -r requirements.txt`
 
 3.  **Run the Application**:
-    *   Execute the Python backend script: `python api/index.py`
-    *   You should see output indicating the Flask development server is running (e.g., `* Running on http://127.0.0.1:5001/`).
+    *   Execute the Python backend script: `python index.py`
+    *   You should see output indicating the Flask development server is running (e.g., `* Running on http://127.0.0.1:5000/`).
 
 4.  **Access in Browser**:
     *   Open your web browser (e.g., Chrome, Firefox).
-    *   Go to the address: `http://127.0.0.1:5001/`
+    *   Go to the address: `http://127.0.0.1:5000/`
 
 ## 6. Deployment
 
