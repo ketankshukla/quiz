@@ -13,10 +13,6 @@
       "dest": "api/index.py"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
       "src": "/script.js",
       "dest": "/script.js"
     },
@@ -26,7 +22,7 @@
     },
     {
       "src": "/questions.json",
-      "dest": "/questions.json" 
+      "dest": "/questions.json"
     },
     {
       "src": "/",

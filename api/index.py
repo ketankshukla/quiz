@@ -2,13 +2,18 @@ from flask import Flask, jsonify, send_from_directory
 import json
 import os
 
-app = Flask(__name__, static_folder='../static', template_folder='../templates') # Adjusted for Vercel structure
+app = Flask(__name__)
 
-# Determine the base directory of the project (quiz folder)
-# For Vercel, __file__ will be something like /var/task/api/index.py
-# So, quiz_dir should point to /var/task/
-quiz_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-questions_file_path = os.path.join(quiz_dir, 'questions.json')
+# In Vercel, the current working directory is typically the project root.
+# The 'api' directory is where this script (index.py) lives.
+# So, questions.json should be one level up from the 'api' directory.
+# Path relative to this file (api/index.py) to the project root, then to questions.json
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+questions_file_path = os.path.join(base_dir, 'questions.json')
+
+# Alternative: Vercel often sets the current working directory to the project root
+# questions_file_path = 'questions.json' # If CWD is project root
+# For robustness, let's try constructing path from __file__ first.
 
 @app.route('/api/questions', methods=['GET'])
 def get_questions():
@@ -22,30 +27,13 @@ def get_questions():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# Serve static files (HTML, CSS, JS) from the root of the 'quiz' directory
-# Vercel handles this by default for files in the root or a 'public' directory.
-# These routes are more for local development consistency or if Vercel needs an explicit handler for all files.
-@app.route('/')
-def serve_index():
-    # Serve index.html from the root of the 'quiz' directory
-    return send_from_directory(quiz_dir, 'index.html')
+# The following routes for serving static files are removed as Vercel will handle them.
 
-@app.route('/<path:filename>')
-def serve_static_files(filename):
-    # Serve other static files (style.css, script.js, questions.json) from the root of the 'quiz' directory
-    # This ensures questions.json is also served if the JS tries to fetch it directly before API integration
-    # and also handles .css and .js files.
-    allowed_files = ['style.css', 'script.js', 'questions.json']
-    if filename in allowed_files:
-        return send_from_directory(quiz_dir, filename)
-    # For any other path, especially if it's not a known static file, 
-    # it might be better to return a 404 or let Vercel handle it.
-    # However, to ensure index.html is served for client-side routing (if any), 
-    # some apps return index.html for unknown paths.
-    # For this simple quiz, specific file serving is fine.
-    return send_from_directory(quiz_dir, 'index.html') # Fallback to index for SPA-like behavior if needed, or 404
-
-
-# This is for local development. Vercel uses its own server.
+# The if __name__ == '__main__': block is primarily for local development.
+# Vercel uses a WSGI server (like Gunicorn) to run the Flask app and doesn't use this block.
+# It's fine to keep it for local testing, but it's not used by Vercel for serving.
 if __name__ == '__main__':
-    app.run(debug=True, port=5001) # Using a different port for local dev if needed
+    # For local testing, to ensure static files are served, we might need a simple local setup
+    # or rely on Vercel CLI `vercel dev` which simulates the Vercel environment.
+    # For now, let's keep it simple for the API part.
+    app.run(debug=True, port=5001)
