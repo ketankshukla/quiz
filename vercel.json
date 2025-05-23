@@ -13,24 +13,8 @@
       "dest": "api/index.py"
     },
     {
-      "src": "/script.js",
-      "dest": "/script.js"
-    },
-    {
-      "src": "/style.css",
-      "dest": "/style.css"
-    },
-    {
-      "src": "/questions.json",
-      "dest": "/questions.json"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html" 
+      "dest": "/public/index.html"
     }
   ]
 }
