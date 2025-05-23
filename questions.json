@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "question": "What is the output of `print(type([]))`?",
+    "options": [
+      "<class 'list'>",
+      "<class 'tuple'>",
+      "<class 'dict'>",
+      "<class 'set'>"
+    ],
+    "answer": "<class 'list'>",
+    "explanation": "In Python, `[]` is the literal for an empty list. The `type()` function returns the type of an object, which for `[]` is `<class 'list'>`."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following is used to define a block of code in Python?",
+    "options": [
+      "Curly braces {}",
+      "Parentheses ()",
+      "Indentation",
+      "Quotation marks \"\""
+    ],
+    "answer": "Indentation",
+    "explanation": "Python uses indentation (whitespace at the beginning of a line) to define blocks of code, such as loops, functions, and classes. Other languages often use curly braces."
+  },
+  {
+    "id": 3,
+    "question": "What does the `len()` function do when applied to a string?",
+    "options": [
+      "Returns the number of words in the string",
+      "Returns the number of characters in the string",
+      "Converts the string to lowercase",
+      "Checks if the string is empty"
+    ],
+    "answer": "Returns the number of characters in the string",
+    "explanation": "The `len()` function is a built-in Python function that returns the number of items in a container. For strings, it returns the number of characters."
+  },
+  {
+    "id": 4,
+    "question": "Which keyword is used to define a function in Python?",
+    "options": [
+      "function",
+      "def",
+      "fun",
+      "define"
+    ],
+    "answer": "def",
+    "explanation": "The `def` keyword is used to define a user-defined function in Python. It is followed by the function name and parentheses `()`."
+  },
+  {
+    "id": 5,
+    "question": "What is the correct file extension for Python files?",
+    "options": [
+      ".pyth",
+      ".pt",
+      ".p",
+      ".py"
+    ],
+    "answer": ".py",
+    "explanation": "Python source files are typically saved with the `.py` extension. This is the standard convention recognized by Python interpreters and development tools."
+  },
+  {
+    "id": 6,
+    "question": "What will be the output of `print('Hello' + ' ' + 'World')`?",
+    "options": [
+      "HelloWorld",
+      "Hello World",
+      "Error",
+      "'Hello' ' ' 'World'"
+    ],
+    "answer": "Hello World",
+    "explanation": "In Python, the `+` operator is used for string concatenation. It joins the strings together. `'Hello' + ' ' + 'World'` results in `'Hello World'`."
+  },
+  {
+    "id": 7,
+    "question": "Which data type is immutable in Python?",
+    "options": [
+      "List",
+      "Dictionary",
+      "Set",
+      "Tuple"
+    ],
+    "answer": "Tuple",
+    "explanation": "Tuples are immutable sequences, meaning their contents cannot be changed after creation. Lists, dictionaries, and sets are mutable."
+  },
+  {
+    "id": 8,
+    "question": "What is the purpose of the `pass` statement in Python?",
+    "options": [
+      "To skip an iteration in a loop",
+      "To exit a function immediately",
+      "It is a null operation; nothing happens when it executes",
+      "To raise an exception"
+    ],
+    "answer": "It is a null operation; nothing happens when it executes",
+    "explanation": "The `pass` statement is a null operation. It is used as a placeholder when a statement is syntactically required but you do not want any command or code to execute."
+  },
+  {
+    "id": 9,
+    "question": "How do you start a single-line comment in Python?",
+    "options": [
+      "// This is a comment",
+      "/* This is a comment */",
+      "# This is a comment",
+      "<!-- This is a comment -->"
+    ],
+    "answer": "# This is a comment",
+    "explanation": "In Python, a single-line comment starts with the hash character `#` and extends to the end of the physical line."
+  },
+  {
+    "id": 10,
+    "question": "What does the `//` operator do in Python?",
+    "options": [
+      "Exponentiation",
+      "Bitwise XOR",
+      "Floor division",
+      "Modulo operation"
+    ],
+    "answer": "Floor division",
+    "explanation": "The `//` operator in Python performs floor division. It divides the first number by the second number and rounds the result down to the nearest whole number (integer)."
+  },
+  {
+    "id": 11,
+    "question": "Which method is used to add an element to the end of a list in Python?",
+    "options": ["add()", "insert()", "append()", "extend()"],
+    "answer": "append()",
+    "explanation": "The `append()` method adds a single element to the end of a list. `extend()` adds all elements of an iterable, and `insert()` adds an element at a specified position."
+  },
+  {
+    "id": 12,
+    "question": "What is the output of `bool(0)` in Python?",
+    "options": ["True", "False", "0", "Error"],
+    "answer": "False",
+    "explanation": "In Python, `0`, empty sequences (like `[]`, `()`, `''`), empty mappings (like `{}`), and `None` are considered False in a boolean context. All other values are generally True."
+  },
+  {
+    "id": 13,
+    "question": "Which of these is NOT a built-in data type in Python?",
+    "options": ["int", "float", "char", "str"],
+    "answer": "char",
+    "explanation": "Python does not have a separate `char` data type. Single characters are represented as strings of length 1."
+  },
+  {
+    "id": 14,
+    "question": "What keyword is used to handle exceptions in Python?",
+    "options": ["try", "except", "catch", "handle"],
+    "answer": "except",
+    "explanation": "In Python, `try` blocks are used to enclose code that might raise an exception, and `except` blocks are used to define how to handle specific exceptions."
+  },
+  {
+    "id": 15,
+    "question": "How do you create an empty set in Python?",
+    "options": ["`{}`", "`set()`", "`[]`", "`new Set()`"],
+    "answer": "`set()`",
+    "explanation": "Using `{}` creates an empty dictionary. To create an empty set, you must use the `set()` constructor."
+  },
+  {
+    "id": 16,
+    "question": "What does the `range(3)` function generate?",
+    "options": ["`[0, 1, 2]`", "`[1, 2, 3]`", "`[0, 1, 2, 3]`", "`[3]`"],
+    "answer": "`[0, 1, 2]`",
+    "explanation": "`range(n)` generates a sequence of numbers starting from 0 up to (but not including) `n`. So, `range(3)` produces 0, 1, 2. Note that `range()` returns a range object, not a list directly in Python 3, but it represents this sequence."
+  },
+  {
+    "id": 17,
+    "question": "Which operator is used for exponentiation in Python?",
+    "options": ["`^`", "`**`", "`%`", "`//`"],
+    "answer": "`**`",
+    "explanation": "The `**` operator is used for exponentiation (e.g., `2 ** 3` is 8). The `^` operator is bitwise XOR."
+  },
+  {
+    "id": 18,
+    "question": "What is the primary purpose of a Python virtual environment?",
+    "options": ["To speed up Python execution", "To isolate project dependencies", "To encrypt Python code", "To automatically format Python code"],
+    "answer": "To isolate project dependencies",
+    "explanation": "Virtual environments create isolated environments for Python projects, allowing each project to have its own set of dependencies and package versions, preventing conflicts."
+  },
+  {
+    "id": 19,
+    "question": "Which string method removes whitespace from both ends of a string?",
+    "options": ["`strip()`", "`trim()`", "`remove_whitespace()`", "`clean()`"],
+    "answer": "`strip()`",
+    "explanation": "The `strip()` method returns a copy of the string with leading and trailing whitespace removed. `lstrip()` removes leading, and `rstrip()` removes trailing whitespace."
+  },
+  {
+    "id": 20,
+    "question": "What does `__init__` method in a Python class represent?",
+    "options": ["A destructor method", "A static method", "A constructor method", "A private method"],
+    "answer": "A constructor method",
+    "explanation": "The `__init__` method is a special method in Python classes that serves as the constructor. It is automatically called when an object of the class is created."
+  }
+]

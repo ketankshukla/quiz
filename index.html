@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <header>
+            <h1>Python Quiz Challenge</h1>
+        </header>
+        <main>
+            <div id="quiz-area">
+                <div id="question-container">
+                    <p id="question-text">Question text will appear here.</p>
+                </div>
+                <div id="options-container">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+                <div id="feedback-container">
+                    <p id="feedback-text"></p>
+                </div>
+            </div>
+            <div id="navigation-container">
+                <button id="prev-btn" class="nav-btn" disabled>Previous</button>
+                <button id="next-btn" class="nav-btn">Next</button>
+                <button id="submit-btn" class="nav-btn" style="display: none;">Submit Quiz</button>
+            </div>
+            <div id="progress-container">
+                <p>Question <span id="current-question-number">1</span> of <span id="total-question-number">N</span></p>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 Python Quiz App</p>
+        </footer>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h2>Quiz Results</h2>
+        <p>You scored <span id="score">0</span> out of <span id="total-score">0</span>.</p>
+        <button id="restart-btn" class="nav-btn">Restart Quiz</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.quiz-container {
+    background-color: #ffffff; /* White container background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+header h1 {
+    color: #306998; /* Python Blue */
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+#quiz-area {
+    margin-bottom: 25px;
+}
+
+#question-container p {
+    font-size: 1.4em;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    min-height: 50px; /* Ensure space for question text */
+}
+
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    background-color: #ffd343; /* Python Yellow */
+    color: #306998; /* Python Blue for text */
+    border: 2px solid #ffc107; /* Darker yellow border */
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: left;
+}
+
+.option-btn:hover {
+    background-color: #ffc107; /* Darker yellow on hover */
+}
+
+.option-btn:active {
+    transform: scale(0.98);
+}
+
+.option-btn.selected {
+    background-color: #306998; /* Python Blue for selected */
+    color: #ffffff; /* White text for selected */
+    border-color: #245082; /* Darker blue border for selected */
+}
+
+.option-btn.correct {
+    background-color: #4CAF50; /* Green for correct */
+    color: white;
+    border-color: #388E3C;
+}
+
+.option-btn.incorrect {
+    background-color: #F44336; /* Red for incorrect */
+    color: white;
+    border-color: #D32F2F;
+}
+
+#feedback-container p {
+    font-size: 1.1em;
+    min-height: 25px; /* Space for feedback */
+    margin-top: 10px;
+}
+
+#feedback-text.correct {
+    color: #4CAF50;
+}
+
+#feedback-text.incorrect {
+    color: #F44336;
+}
+
+#navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    background-color: #306998; /* Python Blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #245082; /* Darker Python Blue */
+}
+
+.nav-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#submit-btn {
+    background-color: #4CAF50; /* Green for submit */
+}
+
+#submit-btn:hover {
+    background-color: #388E3C;
+}
+
+#progress-container p {
+    font-size: 1em;
+    color: #555;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 30px;
+}
+
+#results-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#results-container h2 {
+    color: #306998; /* Python Blue */
+    margin-bottom: 20px;
+}
+
+#results-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#restart-btn {
+    background-color: #ffd343; /* Python Yellow */
+    color: #306998; /* Python Blue */
+}
+
+#restart-btn:hover {
+    background-color: #ffc107;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .quiz-container, #results-container {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    #question-container p {
+        font-size: 1.2em;
+    }
+    .option-btn, .nav-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    #navigation-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-btn {
+        width: 100%;
+    }
+}
