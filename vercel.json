@@ -12,6 +12,5 @@
       "src": "/api/(.*)",
       "dest": "api/index.py"
     }
-    // Static files in the 'public' directory will be served automatically by Vercel.
   ]
 }
